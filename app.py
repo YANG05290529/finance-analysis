@@ -41,6 +41,15 @@ def init_db():
         ''')
         conn.commit()
 
+# 新增首頁與狀態檢查路由
+@app.route("/", methods=["GET"])
+def home():
+    return "✅ Finance Analysis API is running!"
+
+@app.route("/status", methods=["GET"])
+def status():
+    return jsonify(success=True, message="API status OK")
+
 @app.route('/submit', methods=['POST'])
 def submit_data():
     try:
@@ -104,27 +113,16 @@ def submit_data():
             ))
 
         conn.commit()
-        # conn.close()
+        conn.close()
 
         return jsonify(success=True, message="資料已成功寫入或更新")
-        # response = jsonify(success=True, message="資料已成功寫入或更新")
-        # response.headers.add('Access-Control-Allow-Origin', '*')
-        # return response, 200
 
     except Exception as e:
         print("❌ 錯誤：", str(e))
         response = jsonify(success=False, message=str(e))
         response.status_code = 500
         return response
-        
 
 if __name__ == '__main__':
     init_db()
-    # app.run(debug=True, use_reloader=False)
-    # app.run(host='0.0.0.0', port=10000)
-
-@app.route("/", methods=["GET"])
-def index():
-    return "✅ Flask app is running. Try POSTing to /submit"
-
-
+    app.run(host='0.0.0.0', port=10000, debug=False, use_reloader=False)
