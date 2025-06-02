@@ -1,4 +1,5 @@
-from flask import Flask, request, jsonify, render_template
+完整的 Flask 路由示範
+from flask import Flask, request, jsonify
 from flask_cors import CORS
 import sqlite3
 import os
@@ -41,17 +42,15 @@ def init_db():
         ''')
         conn.commit()
 
-# 首頁路由，回傳靜態HTML頁面
+# 新增首頁與狀態檢查路由
 @app.route("/", methods=["GET"])
 def home():
-    return render_template("index.html")  # 放在 templates/index.html
+    return "✅ Finance Analysis API is running!"
 
-# API狀態檢查
 @app.route("/status", methods=["GET"])
 def status():
     return jsonify(success=True, message="API status OK")
 
-# 收集並存入資料的API
 @app.route('/submit', methods=['POST'])
 def submit_data():
     try:
