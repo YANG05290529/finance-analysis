@@ -1,4 +1,3 @@
-完整的 Flask 路由示範
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import sqlite3
