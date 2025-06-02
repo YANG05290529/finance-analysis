@@ -120,6 +120,6 @@ def submit_data():
 
 if __name__ == '__main__':
     init_db()
-    app.run(debug=True, use_reloader=False)
-    app.run(host='0.0.0.0', port=10000)
+    # app.run(debug=True, use_reloader=False)
+    # app.run(host='0.0.0.0', port=10000)
 
