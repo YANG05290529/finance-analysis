@@ -49,7 +49,9 @@ def home():
 @app.route("/status", methods=["GET"])
 def status():
     return jsonify(success=True, message="API status OK")
-
+@app.route("/")
+def index():
+    return render_template('index.html')
 @app.route('/submit', methods=['POST'])
 def submit_data():
     try:
