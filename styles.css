@@ -1,0 +1,104 @@
+/* 全局設置 */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* 容器設置 */
+.container {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fefcfc;
+    box-shadow: 0 0 15px rgba(121, 97, 97, 0.1);
+    border-radius: 10px;
+}
+
+/* 標題設置 */
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #544a4a;
+    margin-bottom: 20px;
+}
+
+/* 各區塊的間距設置 */
+section {
+    margin-bottom: 30px;
+}
+
+/* 隱藏元素類別 */
+.hidden {
+    display: none;
+}
+
+/* 表單的排版 */
+form {
+    display: grid;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+/* 文字輸入框樣式 */
+input[type="text"],
+input[type="email"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+}
+
+/* 按鈕樣式 */
+button {
+    background-color: #c79191;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+button:hover {
+    background-color: #ac7272;
+}
+
+/* 分析結果顯示區域 */
+#analysisResults,
+#savingsGoal,
+#incomeDistributionAdvice,
+#copingStrategies,
+#financialWarning {
+    background-color: #dcbfbf;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* 圖表區塊 */
+.chart-container-center {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* 確保圖表大小一致 */
+.chart {
+    width: 48%; /* 每個圖表占容器寬度的48%，保證間距一致 */
+    height: 300px; /* 明確設置高度一致 */
+    margin-top: 20px;
+}
+
+canvas {
+    width: 100% !important; /* 確保 canvas 佔滿父容器寬度 */
+    height: 100% !important; /* 確保 canvas 佔滿父容器高度 */
+
+/* 響應式：手機適配 */
+@media (max-width: 768px) {
+    .chart {
+        width: 100%;
+    }
+}}
